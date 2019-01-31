@@ -2,7 +2,7 @@
     (:require [re-frame.core :as re-frame]
               [tic-tac-toe.db :as db]))
 
-(re-frame/register-handler
+(re-frame/reg-event-db
  :initialize-db
  (fn  [_ _]
    db/default-db))
@@ -49,7 +49,7 @@
         (when (keyword? (first diag))
           (first diag))))))
 
-(re-frame/register-handler
+(re-frame/reg-event-db
   :move
   (fn [db [_ x y]]
     (let [turn (:turn db)

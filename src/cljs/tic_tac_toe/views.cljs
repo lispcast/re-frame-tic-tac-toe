@@ -15,13 +15,15 @@
 
 (defn grid []
   [:table
-   (for [y (range 3)]
-     [:tr
-      (for [x (range 3)]
-        [:td {:style {:width 30
-                      :height 30
-                      :text-align :center}}
-         [cell x y]])])])
+   [:tbody
+    (for [y (range 3)]
+      [:tr {:key (str y)}
+       (for [x (range 3)]
+         [:td {:style {:width 30
+                       :height 30
+                       :text-align :center}
+               :key (str [x y])}
+          [cell x y]])])]])
 
 (defn main-panel []
   (let [db (re-frame/subscribe [:db])

@@ -1,11 +1,10 @@
 (defproject tic-tac-toe "0.1.0-SNAPSHOT"
-  :dependencies [[org.clojure/clojure "1.8.0"]
-                 [org.clojure/clojurescript "1.8.51"]
-                 [reagent "0.5.1"]
-                 [binaryage/devtools "0.6.1"]
-                 [re-frame "0.7.0"]]
+  :dependencies [[org.clojure/clojure "1.10.0"]
+                 [org.clojure/clojurescript "1.10.439"]
+                 [reagent "0.7.0"]
+                 [re-frame "0.10.2"]]
 
-  :plugins [[lein-cljsbuild "1.1.3"]]
+  :plugins [[lein-cljsbuild "1.1.5"]]
 
   :min-lein-version "2.5.3"
 
@@ -19,12 +18,11 @@
 
   :profiles
   {:dev
-   {:dependencies [
-                   [figwheel-sidecar "0.5.4-3"]
-                   [com.cemerick/piggieback "0.2.1"]]
+   {:dependencies [[binaryage/devtools "0.9.4"]
+                   [figwheel-sidecar "0.5.18"]
+                   [com.cemerick/piggieback "0.2.2"]]
 
-    :plugins      [[lein-figwheel "0.5.4-3"]
-                   [cider/cider-nrepl "0.13.0-SNAPSHOT"]]
+    :plugins      [[lein-figwheel "0.5.18"]]
     }}
 
   :cljsbuild

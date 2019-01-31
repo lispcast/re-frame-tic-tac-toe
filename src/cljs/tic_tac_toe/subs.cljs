@@ -2,27 +2,27 @@
     (:require-macros [reagent.ratom :refer [reaction]])
     (:require [re-frame.core :as re-frame]))
 
-(re-frame/register-sub
+(re-frame/reg-sub
  :name
  (fn [db]
-   (reaction (:name @db))))
+   (:name db)))
 
-(re-frame/register-sub
+(re-frame/reg-sub
   :db
   (fn [db]
     db))
 
-(re-frame/register-sub
+(re-frame/reg-sub
   :cell
   (fn [db [_ x y]]
-    (reaction (get-in @db [:board [x y]]))))
+    (get-in db [:board [x y]])))
 
-(re-frame/register-sub
+(re-frame/reg-sub
   :turn
   (fn [db _]
-    (reaction (:turn @db))))
+    (:turn db)))
 
-(re-frame/register-sub
+(re-frame/reg-sub
   :winner
   (fn [db _]
-    (reaction (:winner @db))))
+    (:winner db)))
